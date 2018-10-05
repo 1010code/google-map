@@ -67,6 +67,16 @@
               });
               map.setZoom(20);
               map.setCenter(pos);
+              // windows
+              var contentString = `<h1>安安你好</h1>
+              我在這裡哦！！`;
+
+              var infowindow = new google.maps.InfoWindow({
+                content: contentString
+              });
+              marker.addListener('click', function () {
+                infowindow.open(map, marker);
+              });
             });
           } else {
             // Browser doesn't support Geolocation
